@@ -11,6 +11,7 @@ skip_audio: Optional[bool] = None
 many_faces: Optional[bool] = None
 reference_face_position: Optional[int] = None
 reference_frame_number: Optional[int] = None
+reference_face_path: Optional[str] = None
 similar_face_distance: Optional[float] = None
 temp_frame_format: Optional[str] = None
 temp_frame_quality: Optional[int] = None

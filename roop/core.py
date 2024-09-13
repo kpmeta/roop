@@ -38,6 +38,7 @@ def parse_args() -> None:
     program.add_argument('--skip-audio', help='skip target audio', dest='skip_audio', action='store_true')
     program.add_argument('--many-faces', help='process every face', dest='many_faces', action='store_true')
     program.add_argument('--reference-face-position', help='position of the reference face', dest='reference_face_position', type=int, default=0)
+    program.add_argument('--reference-face-path', help='reference face path', dest='face_reference_path')
     program.add_argument('--reference-frame-number', help='number of the reference frame', dest='reference_frame_number', type=int, default=0)
     program.add_argument('--similar-face-distance', help='face distance used for recognition', dest='similar_face_distance', type=float, default=0.85)
     program.add_argument('--temp-frame-format', help='image format used for frame extraction', dest='temp_frame_format', default='png', choices=['jpg', 'png'])
@@ -62,6 +63,7 @@ def parse_args() -> None:
     roop.globals.many_faces = args.many_faces
     roop.globals.reference_face_position = args.reference_face_position
     roop.globals.reference_frame_number = args.reference_frame_number
+    roop.globals.reference_face_path = args.face_reference_path
     roop.globals.similar_face_distance = args.similar_face_distance
     roop.globals.temp_frame_format = args.temp_frame_format
     roop.globals.temp_frame_quality = args.temp_frame_quality
@@ -70,7 +72,6 @@ def parse_args() -> None:
     roop.globals.max_memory = args.max_memory
     roop.globals.execution_providers = decode_execution_providers(args.execution_provider)
     roop.globals.execution_threads = args.execution_threads
-
 
 def encode_execution_providers(execution_providers: List[str]) -> List[str]:
     return [execution_provider.replace('ExecutionProvider', '').lower() for execution_provider in execution_providers]
