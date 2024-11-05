@@ -21,9 +21,15 @@ Be aware, the installation needs technical skills and is not for beginners. Plea
 [Acceleration](https://github.com/s0md3v/roop/wiki/2.-Acceleration) - Unleash the full potential of your CPU and GPU
 
 
+## Requirements
+
+ - Python version : 3.7> && <3.11
+
 ## Usage
 
-Start the program with arguments:
+- First run script `init.sh` file for macOS and Linux it intalls the required python version and the dependencies.
+
+- Start the program with arguments:
 
 ```
 python run.py [options]
